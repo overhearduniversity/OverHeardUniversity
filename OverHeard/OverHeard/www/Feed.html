@@ -1,0 +1,160 @@
+﻿<style>
+
+    .triangle-isosceles {
+        position: relative;
+        padding: 15px;
+        margin: 1em 0px 3em;
+        color: #000;
+        background: transparent linear-gradient(#F9D835, #F3961C) repeat scroll 0% 0%;
+        border-radius: 10px;
+    }
+
+        .triangle-isosceles.left:after {
+            content: "";
+            position: absolute;
+            bottom: -15px; /* value = - border-top-width - border-bottom-width */
+            left: 50px; /* controls horizontal position */
+            border-width: 15px 15px 0; /* vary these values to change the angle of the vertex */
+            border-style: solid;
+            border-color: #f3961c transparent;
+            /* reduce the damage in FF3.0 */
+            display: block;
+            width: 0;
+        }
+
+        .triangle-isosceles.right:after {
+            content: "";
+            position: absolute;
+            bottom: -15px; /* value = - border-top-width - border-bottom-width */
+            right: 50px; /* controls horizontal position */
+            border-width: 15px 15px 0; /* vary these values to change the angle of the vertex */
+            border-style: solid;
+            border-color: #f3961c transparent;
+            /* reduce the damage in FF3.0 */
+            display: block;
+            width: 0;
+        }
+
+    .triangle-border {
+        position: relative;
+        padding: 15px;
+        margin: 1em 0px 3em;
+        border: 5px solid #5A8F00;
+        color: #333;
+        background: #FFF none repeat scroll 0% 0%;
+        border-radius: 10px;
+    }
+
+        .triangle-border::before {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 40px;
+            border-width: 20px 20px 0px;
+            border-style: solid;
+            border-color: #5A8F00 transparent;
+            display: block;
+            width: 0px;
+        }
+
+        .triangle-border::after {
+            content: "";
+            position: absolute;
+            bottom: -13px;
+            left: 47px;
+            border-width: 13px 13px 0px;
+            border-style: solid;
+            border-color: #FFF transparent;
+            display: block;
+            width: 0px;
+        }
+
+    .rectangle-speech-border {
+        position: relative;
+        padding: 50px 15px;
+        margin: 1em 0px 3em;
+        border: 10px solid #5A8F00;
+        text-align: center;
+        color: #333;
+        background: #FFF none repeat scroll 0% 0%;
+        border-radius: 20px;
+    }
+
+        .rectangle-speech-border::before {
+            content: "";
+            position: absolute;
+            z-index: 10;
+            bottom: -40px;
+            left: 50px;
+            width: 50px;
+            height: 30px;
+            border-style: solid;
+            border-width: 0px 10px 10px 0px;
+            border-color: #5A8F00;
+            background: transparent none repeat scroll 0% 0%;
+            border-bottom-right-radius: 80px 50px;
+            display: block;
+        }
+
+        .rectangle-speech-border::after {
+            content: "";
+            position: absolute;
+            z-index: 10;
+            bottom: -40px;
+            left: 50px;
+            width: 20px;
+            height: 30px;
+            border-style: solid;
+            border-width: 0px 10px 10px 0px;
+            border-color: #5A8F00;
+            background: transparent none repeat scroll 0% 0%;
+            border-bottom-right-radius: 40px 50px;
+            display: block;
+        }
+
+        /* creates a small circle to produce a rounded point where the two curves meet */
+        .rectangle-speech-border > :first-child:before {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            left: 45px;
+            width: 10px;
+            height: 10px;
+            background: #5a8f00;
+            border-radius: 10px;
+        }
+
+        /* creates a white rectangle to cover part of the oval border*/
+        .rectangle-speech-border > :first-child:after{
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 76px;
+            width: 24px;
+            height: 15px;
+            background: #fff;
+        }
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <div style="text-align: center">
+        <h1 style="background-color: blue">Overheard</h1>
+    </div>
+
+    <div>
+        <p class="triangle-isosceles right">This is a test</p>
+    </div>
+
+    <div>
+        <p class="triangle-isosceles left">This is a test</p>
+    </div>
+
+</body>
+</html>
